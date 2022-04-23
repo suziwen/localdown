@@ -11,6 +11,7 @@
   "scripts": {
     "build:copybrc": "cp build/.build.babelrc src/.babelrc",
     "build:rmbrc": "rm -f src/.babelrc",
+    "p": "git push --follow-tags origin master && npm run build && npm --registry https://registry.npmjs.org --access public  publish",
     "build": "cp build/.build.babelrc src/.babelrc && rollup -c build/rollup.config.js && rm -f src/.babelrc",
     "test": "npm run build && mocha test/index.js"
   },
