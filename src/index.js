@@ -190,7 +190,7 @@ class LocalIterator extends AbstractIterator {
 class LocalDOWN extends AbstractLevelDOWN {
   constructor (location, quota) {
     super(path.resolve(location))
-    this.quota = quota
+    this.quota = quota || 50 * 1024 * 1024
 
     // validate that the location is a string and replace any invalid characters with _
     if (typeof location !== 'string') throw DOWNError(util.format(ERR_INVALID_PARAM, 'location', 'String'))
